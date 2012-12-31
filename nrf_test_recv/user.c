@@ -25,16 +25,16 @@ void InitApp(void)
     // Setup SPI peripheral SDI = RPB1, SDO = RPB2, SCK = RPB14
     SDI1R = 0x2;
     RPB2R = 0x3;
-    // Setup UART2 TX = RPB5, RX = RPA4
-    RPB0R = 0x2;
+    // Setup UART1 TX = RPB3, RX = RPA4
+    RPA3R = 0x2;
     U2RXR = 0x1;
     /* Initialize peripherals */
     TRISBbits.TRISB11=0;
     TRISBbits.TRISB10=0;
     TRISBbits.TRISB15=0;
-    TRISBbits.TRISB3=0;
     TRISBbits.TRISB2=0;
     TRISBbits.TRISB1=1;
+    TRISBbits.TRISB0=0;
 }
 
  #define GetSystemClock()       (8000000L)

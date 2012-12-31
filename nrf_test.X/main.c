@@ -68,6 +68,13 @@ int32_t main(void)
     setTXAddress("UNIT1");
     setRXAddress(0,"RECV1");
     char temp;
+    char text[6];
+    text[0]='H';
+    text[1]='e';
+    text[2]='l';
+    text[3]='l';
+    text[4]='o';
+    text[5]='!';
     while(1)
     {
         setReceiver();
@@ -76,6 +83,9 @@ int32_t main(void)
 
         setTransmitter();
         PORTBbits.RB11 = 0;
+        DelayMs(1);
+
+        transmitData(&text[0],6);
         DelayMs(1);
     }
 }
